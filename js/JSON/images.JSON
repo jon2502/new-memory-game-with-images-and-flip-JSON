@@ -1,0 +1,27 @@
+[
+    {
+        "name":"Brander",
+        "img":"img/Brander_card.png"
+    },
+    {
+        "name":"character",
+        "img":"img/character_card.png"
+    },
+    {
+        "name":"charactersister",
+        "img":"img/charactersister_card.png"
+
+    },
+    {
+        "name":"Gethlire",
+        "img":"img/Gethlire_card.png"
+    },
+    {
+        "name":"Scathach",
+        "img":"img/Scathach_card.png"
+    },
+    {
+        "name":"charactermiddlesister",
+        "img":"img/charactermiddlesister_card.png"
+    }
+]
