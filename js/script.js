@@ -21,8 +21,9 @@ function loadGame(){
     fetch("js/JSON/images.JSON")
     .then((res)=> res.json())
     .then((data) => {
-        cards=[]
-        cards = [...data, ...data]; //...(Spread) bruges til at lave de to versioner af arrayet til et samlet array
+    console.log(data)
+        imageArray=[]
+        imageArray = [...data, ...data]; //...(Spread) bruges til at lave de to versioner af arrayet til et samlet array
         console.log(cards)
         shuffle()
         createCards()
@@ -32,17 +33,17 @@ loadGame()
 
 function shuffle(){
     console.log(cards)
-    cardsarray=[]
-    while (cards.length > 0) {
-        let num = Math.random() * cards.length; //Generere et tilfældig tal i forhold til mit arrays længde 
+    finalArray=[]
+    while (imageArray.length > 0) {
+        let num = Math.random() * imageArray.length; //Generere et tilfældig tal i forhold til mit arrays længde 
         var numRoundedDown = Math.floor(num); //Runder tallet ned til nærmeste hele tal 
-        cardsarray.push(cards.splice(numRoundedDown, 1)[0]);//Putter tallet over i finalarray og gentager derefter processen indtil der ikke er flere tal tilbage i arrayet 
+        finalArray.push(imageArray.splice(numRoundedDown, 1)[0]);//Putter tallet over i finalarray og gentager derefter processen indtil der ikke er flere tal tilbage i arrayet 
     }
-    console.log(cardsarray)
+    console.log(finalArray)
 }
 
 function createCards(){
-    for(let card of cardsarray) {
+    for(let card of finalArray) {
         const cardElement = document.createElement('div');
         cardElement.classList.add('cards');
         cardElement.setAttribute("data-framework", card.name)
